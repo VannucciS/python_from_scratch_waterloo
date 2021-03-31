@@ -1,0 +1,12 @@
+def remove(entry):
+    new = ""
+    print(entry)
+    for i in range(0, len(entry)):
+        if entry[i] == " ":
+            continue
+        else:
+            new=new +entry[i]
+    return new
+
+
+print(remove('eu tinha uma galinha que se chamava Marilou'))
