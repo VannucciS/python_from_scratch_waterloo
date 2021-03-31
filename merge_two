@@ -1,0 +1,27 @@
+'''
+Didnt work
+'''
+
+def merge_two_sort_seq(one,two):
+    pos_one=0
+    pos_two=0
+    result = []
+    while pos_one < len(one) and pos_two < len(two):
+        if one[pos_one] < two[pos_two]:
+            #result = result + list(one[pos_one])
+            result.append(one[pos_one])
+            pos_one = pos_one + 1
+        else:
+            #result = result + list(two[pos_two])
+            result.append(two[pos_two])
+            pos_two = pos_two = 1
+    while pos_one < len(one):
+        result.append(one[pos_one])
+        pos_one = pos_one + 1
+    while pos_two < len(two):
+        result.append(two[pos_two])
+        pos_two = pos_two + 1
+    return result
+
+
+print(merge_two_sort_seq([5,6,9,11,15,18], [3,4,8,10,13]))
