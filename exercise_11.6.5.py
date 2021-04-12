@@ -1,0 +1,66 @@
+'''
+Instructions
+Finally, add a method is_colour such that circ_1.is_colour(col) is True if the colour of circ_1 is col and False otherwise.
+'''
+
+class Circle:
+    """Circle radius, x and y coordinates, colour
+
+       Public methods:
+       __init__: initializes a new object
+    
+       Attributes:
+       radius: int or float >= 0; circle radius
+       x: int >= 0; x-coordinate of centre
+       y: int >= 0; y-coordinate of centre
+       colour: string; colour of the circle
+    """
+
+    def __init__(self, radius, x, y, colour):
+        """Creates new circle
+        """
+
+        self.radius = radius
+        self.x = x
+        self.y = y
+        self.colour = colour
+
+    def __str__(self):
+        """Prints object
+        """
+
+        return self.colour + " circle of radius " + \
+            str(self.radius) + " centred at (" + \
+            str(self.x) + "," + str(self.y) + ")"
+
+    def area(self):
+        """Determines area.
+        """
+        return math.pi * self.radius ** 2
+
+    def aligned(self, other):
+        if self.x == other.x and self.y == other.y:
+            return True
+        else:
+            return False
+            
+    def bigger(self, other):
+        if self.radius > other.radius:
+            return True
+        else:
+            return False
+        
+    def is_colour(self, col):
+        if self.colour == col:
+            return True
+        else:
+            return False
+        
+        
+        
+        
+
+circ_1 = Circle(10, 10, 10, 'brown')
+circ_2 = Circle(20,10,9,'yellow')
+
+print(circ_1.is_colour('yellow'))
