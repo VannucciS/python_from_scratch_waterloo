@@ -1,0 +1,21 @@
+def max_color(seq):
+    count = {}
+    for item in seq:
+        if item in count.keys():
+            count[item] = count[item]+1
+        else:
+            count[item]= 1
+    best = 0
+    most = ''
+    for colors, num in count.items():
+        if num>best:
+            most = colors
+            best = num
+    return (most), str(best)
+
+
+colours = ('azul', 'verde', 'amarelo','azul','azul',
+           'azul','azul','azul','azul','azul','azul',
+           'azul','azul','azul','azul','azul','azul')
+
+print(max_color(colours))
